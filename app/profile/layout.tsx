@@ -1,10 +1,5 @@
-import Footer from '@/src/components/shared/Footer'
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Navbar from '@/src/components/shared/Navbar/Navbar'
-import ThemeProvider from './providers'
-
-const inter = Inter({ subsets: ['latin'] })
+import Footer from "@/src/components/shared/Footer"
+import Navbar from "@/src/components/shared/Navbar/Navbar"
 
 
 
@@ -20,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Navbar />
         {/* <ThemeProvider> */}
         {children}
