@@ -28,27 +28,26 @@ const Navbar = () => {
         <section className="w-full px-8 transition-colors sticky -top-0 border-b bg-white" id='header' style={{ zIndex: 100000 }}>
             <div className="container flex items-center justify-between py-4 sm:py-5 mx-auto md:flex-row ">
                 <div className="relative flex items-center justify-between">
-                    <button onClick={() => sideBarMenuShowHandle()}>
-                        534
+                    <button
+                        className='px-1'
+                        onClick={() => sideBarMenuShowHandle()}
+                    >
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.1604 18.1807H21.1604V16.1807H3.1604V18.1807ZM3.1604 13.1807H21.1604V11.1807H3.1604V13.1807ZM3.1604 6.18066V8.18066H21.1604V6.18066H3.1604Z" fill="#5F6368" />
+                        </svg>
                     </button>
 
-                    <a href="#_" className="flex items-center font-medium text-primary lg:w-auto lg:items-center justify-center">
-                        <span className="mx-auto text-xl font-black leading-none text-primary select-none">
-                            AI
-                            <span className="text-indigo-600">.</span>
-                        </span>
-                    </a>
-
-                    <nav className="hidden lg:flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8 md:border-l md:border-gray-200 ">
-                        <a href="#_" className="mr-5 font-medium leading-6 hover:underline">Home</a>
-                        <a href="#_" className="mr-5 font-medium leading-6 hover:underline">Features</a>
-                        <a href="#_" className="mr-5 font-medium leading-6 hover:underline">Pricing</a>
-                        <a href="#_" className="mr-5 font-medium leading-6 hover:underline">Blog</a>
-                    </nav>
                 </div>
+                <nav className="hidden lg:flex flex-wrap items-center mb-5 text-base md:mb-0 md:pl-8 md:ml-8">
+                    <a href="#_" className="mr-5 font-medium leading-6 hover:underline">Home</a>
+                    <a href="#_" className="mr-5 font-medium leading-6 hover:underline">Features</a>
+                    <a href="#_" className="mr-5 font-medium leading-6 hover:underline">Pricing</a>
+                    <a href="#_" className="mr-5 font-medium leading-6 hover:underline">Blog</a>
+                </nav>
+
                 <div>
                     <button>
-                        f
+
                     </button>
                 </div>
                 {/* <div className="inline-flex items-center ml-5 space-x-6 lg:justify-end">
