@@ -59,7 +59,7 @@ const Navbar = () => {
                     </a>
                 </div> */}
             </div>
-            <SideProfileMenu />
+            {/* <SideProfileMenu /> */}
             <SideBarMenu sidebarMenuRef={sidebarMenuRef} />
 
         </section>

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Home5 from './Test'
 
 export default async function Home() {
   return (
@@ -13,6 +14,7 @@ export default async function Home() {
           priority
         />
       </div> */}
+      <Home5 />
 
     </main>
   )
