@@ -1,5 +1,6 @@
 import Loading from '@/src/components/loading/Loading'
 import NewPost from '@/src/components/shared/NewPost/NewPost'
+import Error404 from '@/src/components/shared/NotFound/Error404'
 import { Metadata } from 'next'
 
 
@@ -33,63 +34,76 @@ const menuBtn = [
     }
 ]
 
-export default function Profile({ }) {
+export default async function Profile(context: { params: { user_name: string } }) {
+    const user_name = context.params
+    const check_user_name = user_name?.user_name?.[0] == '~'
 
     return (
         <main className='px-3 flex flex-col gap-2 md:grid grid-cols-12 sm:gap-4' >
-            <section className='col-start-1 lg:col-start-2 col-end-13 lg:col-end-12 pt-10 bg-[#C26401] ring-lime-50  rounded-lg h-[180px] lg:h-[240px] w-full '>
+            {
+                check_user_name ?
+                    <>
+                        <section className='col-start-1 lg:col-start-2 col-end-13 lg:col-end-12 pt-10 bg-[#C26401] ring-lime-50  rounded-lg h-[180px] lg:h-[240px] w-full '>
 
-            </section>
-            <section className='col-start-1 lg:col-start-2 col-end-5 bg-white border border-[#DADCE0] rounded-lg'>
-                {
-                    menuBtn?.map((_m, index) => {
-                        return (
-                            <button key={index} className=" mt-2 border-0 w-full py-2 px-8  text-lg text-left cursor-progress" >
-                                {
-                                    _m?.html
-                                }
-                            </button>
-                        )
-                    })
-                }
-            </section>
-            <section className='col-start-5 col-end-13 lg:col-end-12 '>
-                <NewPost />
-                {
-                    post?.map((_p, index) => {
-                        return (
-                            <div key={index} className='border border-[#DADCE0] bg-white  overflow-hidden pt-0  rounded-lg'>
-
-                                <div className='flex items-center gap-1 '>
-                                    <span>
-                                        <img src={_p?.avatar} alt="" className='rounded-full h-12 w-12 object-contain' />
-                                    </span>
-                                    <div className='flex flex-col '>
-                                        <span className='font-medium'>
+                        </section>
+                        <section className='col-start-1 lg:col-start-2 col-end-5 bg-white border border-[#DADCE0] rounded-lg'>
+                            {
+                                menuBtn?.map((_m, index) => {
+                                    return (
+                                        <button key={index} className=" mt-2 border-0 w-full py-2 px-8  text-lg text-left cursor-progress" >
                                             {
-                                                _p.name
+                                                _m?.html
                                             }
-                                        </span>
-                                        <span className='text-xs'>
-                                            {
-                                                _p?.entry_date?.toDateString()
-                                            }
-                                        </span>
-                                    </div>
-                                </div>
+                                        </button>
+                                    )
+                                })
+                            }
+                        </section>
+                        <section className='col-start-5 col-end-13 lg:col-end-12 '>
+                            <NewPost />
+                            {
+                                post?.map((_p, index) => {
+                                    return (
+                                        <div key={index} className='border border-[#DADCE0] bg-white  overflow-hidden pt-0  rounded-lg'>
 
-                                <div>
-                                    <iframe
-                                        // srcDoc={_p.description}
-                                        src='https://prog-learn.vercel.app/'>
+                                            <div className='flex items-center gap-1 '>
+                                                <span>
+                                                    <img src={_p?.avatar} alt="" className='rounded-full h-12 w-12 object-contain' />
+                                                </span>
+                                                <div className='flex flex-col '>
+                                                    <span className='font-medium'>
+                                                        {
+                                                            _p.name
+                                                        }
+                                                    </span>
+                                                    <span className='text-xs'>
+                                                        {
+                                                            _p?.entry_date?.toDateString()
+                                                        }
+                                                    </span>
+                                                </div>
+                                            </div>
 
-                                    </iframe>
-                                </div>
-                            </div>
-                        )
-                    })
-                }
-            </section>
+                                            <div>
+                                                <iframe
+                                                    // srcDoc={_p.description}
+                                                    src='https://prog-learn.vercel.app/'>
+
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </section>
+                    </>
+                    :
+                    <>
+                        <section className='col-start-1 lg:col-start-2 col-end-13 lg:col-end-12 py-40'>
+                            <Error404 />
+                        </section>
+                    </>
+            }
         </main>
     )
 }
