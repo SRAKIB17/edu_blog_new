@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './Error404.module.css'
-const Error404 = () => {
+import style from './UserNotFound.module.css'
+const UserNotFound = () => {
     return (
         <div>
             <div className={style.main}>
@@ -32,4 +32,4 @@ const Error404 = () => {
     );
 };
 
-export default Error404;
+export default UserNotFound;

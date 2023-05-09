@@ -1,6 +1,6 @@
 import Loading from '@/src/components/loading/Loading'
 import NewPost from '@/src/components/shared/NewPost/NewPost'
-import Error404 from '@/src/components/shared/NotFound/Error404'
+import UserNotFound from '@/src/components/shared/NotFound/UserNotFound'
 import { Metadata } from 'next'
 
 
@@ -100,7 +100,7 @@ export default async function Profile(context: { params: { user_name: string } }
                     :
                     <>
                         <section className='col-start-1 lg:col-start-2 col-end-13 lg:col-end-12 py-40'>
-                            <Error404 />
+                            <UserNotFound />
                         </section>
                     </>
             }
