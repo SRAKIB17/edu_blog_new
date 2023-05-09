@@ -1,7 +1,10 @@
 import Footer from '@/src/components/shared/Footer'
 import './globals.css'
+import '../src/styles/modal.css'
+
 import Navbar from '@/src/components/shared/Navbar/Navbar'
 import ThemeProvider from './providers'
+import Loading from '@/src/components/loading/Loading'
 
 
 
@@ -19,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
+        <Loading />
         {/* <ThemeProvider> */}
         {children}
         {/* </ThemeProvider> */}

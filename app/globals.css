@@ -7,7 +7,7 @@
   --background-body: #F5F5F5;
   --hover-div: #ECE6E1;
   --hover-link: #ED9243;
-  --primary-color: blue;
+  --primary-color: #5cb85c;
   --primary-bg-foreground-color: white;
 }
 
@@ -36,6 +36,11 @@ body {
   color: var(--primary-bg-foreground-color);
 }
 
+.text-primary {
+  color: var(--primary-color);
+}
+
+
 .btn {
   padding: 16px;
   transition-duration: 200ms;
@@ -44,4 +49,51 @@ body {
 
 .btn:active:focus {
   transform: scale(0.99);
+}
+
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.1ms ease 0.1ms;
+  visibility: visible;
+}
+
+
+[data-title]:after {
+  content: attr(data-title);
+  position: absolute;
+  padding: 2px 4px !important;
+  /* padding: 6px 6px 6px 8px !important; */
+  left: -20%;
+  bottom: calc(100% + 4px);
+  color: white;
+  /* color: #666; */
+  white-space: nowrap;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: 500;
+  border-radius: 4px;
+  -moz-box-shadow: 0px 0px 4px #666;
+  -webkit-box-shadow: 0px 0px 4px #666;
+  box-shadow: 0px 0px 4px #666;
+  opacity: 0;
+  background-color: black;
+  z-index: 99999;
+  visibility: hidden;
+}
+
+[data-title] {
+  position: relative;
+}
+
+/* FOR POST REACT */
+#reactCommentShareSection {
+  transition: 2ms !important;
+}
+
+@media (min-width: 640px) {
+  #reactCommentShareSection {
+    left: inherit !important;
+  }
 }
