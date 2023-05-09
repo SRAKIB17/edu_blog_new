@@ -1,13 +1,7 @@
-"use client"
 import Loading from '@/src/components/loading/Loading'
 import NewPost from '@/src/components/shared/NewPost/NewPost'
 import { Metadata } from 'next'
 
-export async function generateMetadata({ params }: any): Promise<Metadata> {
-    return {
-        title: "params.user_name"
-    }
-}
 
 const post = [
     {

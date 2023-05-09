@@ -71,7 +71,7 @@ const NewPost = () => {
                         </button>
                     </div>
                 </div>
-                <div ref={newPostRef} className='h-0  fixed bottom-0 md:relative  w-full bg-white left-0 p-2 z-[1000] overflow-hidden transition-[2ms]'>
+                <div ref={newPostRef} className='h-0 rounded-t-lg  fixed bottom-0 md:relative  w-full bg-white left-0 p-2 z-[1000] overflow-hidden transition-[2ms]'>
                     <div className=' py-2 pb-4'
                     // style={{ height: 'calc(100% - 100px)' }}
                     >
