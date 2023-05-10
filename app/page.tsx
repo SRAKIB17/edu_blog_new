@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Test from './Test'
+
 
 export default async function Home() {
   return (
@@ -14,7 +14,7 @@ export default async function Home() {
           priority
         />
       </div> */}
-      <Test />
+
       <section className='col-start-2 col-end-12 pt-10' >
         <div className=''>
         </div>

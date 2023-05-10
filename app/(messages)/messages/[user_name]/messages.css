@@ -33,6 +33,22 @@
     transition: 0.4s ease;
 }
 
+.msg_body {
+    height: calc(100vh - 130px) !important;
+}
+
+.msg_body:nth-child(1) {
+    background-color: var(--unselected-message);
+    border-bottom: 1px solid var(--border-color);
+    overflow: auto;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.tst {
+    height: calc(100vh - 100px);
+}
+
 .selected-bg {
     background-color: var(--theme-bg-color);
 }

@@ -1,26 +1,12 @@
 'use client'
-import Image from 'next/image'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
-export default function Test() {
+export default function AudioRecord({ recordButtonHandleRef }: { recordButtonHandleRef: any }) {
+    const canvasRef = useRef<any>()
+    const showRecordStatusRef = useRef<any>()
+
     useEffect(() => {
-        // set up basic variables for app
-
-        const recordButton: any = document.querySelector('.record');
-        const stopButton: any = document.querySelector('.stop');
-
-
-
-        const canvas: any = document.querySelector('.visualizer');
-
-
-        // const mainSection = document.querySelector('.main-controls');
-
-        // disable stop button while not recording
-
-        stopButton.disabled = true;
-
-        // visualiser setup - create web audio api context and canvas
+        const canvas: any = canvasRef.current
 
         let audioCtx: any;
         const canvasCtx = canvas.getContext("2d");
@@ -36,46 +22,29 @@ export default function Test() {
             let onSuccess = function (stream: any) {
                 const mediaRecorder = new MediaRecorder(stream);
                 visualize(stream);
-
-                recordButton.onclick = function () {
+                recordButtonHandleRef.current.onmousedown = () => {
                     mediaRecorder.start();
-                    console.log(mediaRecorder.state);
+                    showRecordStatusRef.current.style.height = '50px'
                     console.log("recorder started");
-                    recordButton.style.background = "red";
-
-                    stopButton.disabled = false;
-                    recordButton.disabled = true;
                 }
-
-                stopButton.onclick = function () {
-                    mediaRecorder.stop();
-                    console.log(mediaRecorder.state);
+                recordButtonHandleRef.current.ontouchstart = () => {
+                    mediaRecorder.start();
+                    showRecordStatusRef.current.style.height = '50px'
+                    console.log("recorder started");
+                }
+                recordButtonHandleRef.current.onmouseup = () => {
                     console.log("recorder stopped");
-                    recordButton.style.background = "";
-                    recordButton.style.color = "";
-                    // mediaRecorder.requestData();
-
-                    stopButton.disabled = true;
-                    recordButton.disabled = false;
+                    showRecordStatusRef.current.style.height = '0px'
+                    mediaRecorder.stop();
+                }
+                recordButtonHandleRef.current.ontouchend = () => {
+                    console.log("recorder stopped");
+                    showRecordStatusRef.current.style.height = '0px'
+                    mediaRecorder.stop();
                 }
 
                 mediaRecorder.onstop = function (e) {
-
-                    // const clipContainer = document.createElement('article');
-                    // const audio = document.createElement('audio');
-                    // const deleteButton = document.createElement('button');
-
-                    // clipContainer.classList.add('clip');
-                    // audio.setAttribute('controls', '');
-                    // deleteButton.textContent = 'Delete';
-                    // deleteButton.className = 'delete';
-
-
-                    // clipContainer.appendChild(audio);
-                    // clipContainer.appendChild(clipLabel);
-                    // clipContainer.appendChild(deleteButton);
-                    // soundClips.appendChild(clipContainer);
-
+                    console.log(e)
                     // audio.controls = true;
                     // const blob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
                     // chunks = [];
@@ -117,7 +86,7 @@ export default function Test() {
             const dataArray = new Uint8Array(bufferLength);
 
             source.connect(analyser);
-            //analyser.connect(audioCtx.destination);
+
 
             draw()
 
@@ -129,17 +98,16 @@ export default function Test() {
 
                 analyser.getByteTimeDomainData(dataArray);
 
-                canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+                canvasCtx.fillStyle = '#4d76fd';
                 canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
                 canvasCtx.lineWidth = 2;
-                canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+                canvasCtx.strokeStyle = 'white';
 
                 canvasCtx.beginPath();
 
                 let sliceWidth = WIDTH * 1.0 / bufferLength;
                 let x = 0;
-
 
                 for (let i = 0; i < bufferLength; i++) {
 
@@ -163,32 +131,21 @@ export default function Test() {
 
     }, [])
     return (
-        <main >
+        <div className='absolute bottom-[44px] z-20 w-full h-0 overflow-hidden transition-[2ms] bg-primary px-2' ref={showRecordStatusRef}>
+            {/* <svg fill="#000000" version="1.1" id="icon" xmlns="http://www.w3.org/2000/svg"
+                width="30" height="30" viewBox="0 0 32 32">
 
-            <section className='col-start-2 col-end-12 pt-10' >
-                <div className="wrapper">
-
-                    <section className="main-controls">
-
-                        <canvas className="visualizer" height="60px"></canvas>
-
-
-                        <div id="buttons">
-                            <button className="record">Record</button>
-                            <button className="stop">Stop</button>
-                        </div>
-                    </section>
-
-                    <section className="sound-clips">
-
-
-                    </section>
-
-                </div>
-
-
-            </section>
-
-        </main>
+                <rect width="32" height="32" fill="none" />
+                <g>
+                    <circle cx="16" cy="16" r="4" className="recordingStartMessage" fill="red" />
+                    <path d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M16,22c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6 S19.3,22,16,22z" fill="#4d76fd" />
+                </g>
+            </svg> */}
+            <canvas
+                ref={canvasRef}
+                className="visualizer overflow-hidden w-full h-full"
+            >
+            </canvas>
+        </div>
     )
 }
