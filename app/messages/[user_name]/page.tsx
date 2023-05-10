@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import SettingsSVG from '@/src/components/Svg/SettingsSVG'
-import UserNotFound from '@/src/components/shared/NotFound/UserNotFound'
-import ClockSVG from '@/src/components/SVG/ClockSVG'
-import DocsSVG from '@/src/components/SVG/DocsSVG'
-import DeleteSVG from '@/src/components/SVG/DeleteSVG'
-import CloudDownloadSVG from '@/src/components/SVG/CloudDownloadSVG'
-import AttachmentSVG from '@/src/components/SVG/AttachmentSVG'
+import SettingsSVG from '../../../src/components/Svg/SettingsSVG'
+import UserNotFound from '../../../src/components/shared/NotFound/UserNotFound'
+import ClockSVG from '../../../src/components/SVG/ClockSVG'
+import DocsSVG from '../../../src/components/SVG/DocsSVG'
+import DeleteSVG from '../../../src/components/SVG/DeleteSVG'
+import CloudDownloadSVG from '../../../src/components/SVG/CloudDownloadSVG'
+import AttachmentSVG from '../../../src/components/SVG/AttachmentSVG'
+
 
 
 export default async function Profile(context: { params: { user_name: string } }) {
