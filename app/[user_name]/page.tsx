@@ -6,7 +6,6 @@ import NewPost from '@/src/components/shared/NewPost/NewPost'
 import UserNotFound from '@/src/components/shared/NotFound/UserNotFound'
 import { Metadata } from 'next'
 
-
 const post = [
     {
         //user_details
