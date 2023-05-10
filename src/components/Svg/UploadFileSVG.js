@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UploadFile = ({ color = 'currentColor', strokeWidth = '0', strokeColor = 'currentColor', size = '24', ...rest }) => {
+const UploadFileSVG = ({ color = 'currentColor', strokeWidth = '0', strokeColor = 'currentColor', size = '24', ...rest }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,5 +18,5 @@ const UploadFile = ({ color = 'currentColor', strokeWidth = '0', strokeColor = '
 };
 // https://github.com/SRAKIB17/ReactCustomIconsLibrary.git
 
-export default UploadFile;
+export default UploadFileSVG;
 

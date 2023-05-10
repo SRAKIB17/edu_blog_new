@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Youtube = ({ color = 'currentColor', strokeWidth = '0', strokeColor = 'currentColor', size = '24', ...rest }) => {
+const YoutubeSVG = ({ color = 'currentColor', strokeWidth = '0', strokeColor = 'currentColor', size = '24', ...rest }) => {
     return (
         <svg
 
@@ -22,5 +22,5 @@ const Youtube = ({ color = 'currentColor', strokeWidth = '0', strokeColor = 'cur
 };
 // https://github.com/SRAKIB17/ReactCustomIconsLibrary.git
 
-export default Youtube;
+export default YoutubeSVG;
 

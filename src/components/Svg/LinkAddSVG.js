@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LinkAdd = ({ color = 'currentColor', strokeWidth = '0', strokeColor = 'currentColor', size = '24', ...rest }) => {
+const LinkAddSVG = ({ color = 'currentColor', strokeWidth = '0', strokeColor = 'currentColor', size = '24', ...rest }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +16,5 @@ const LinkAdd = ({ color = 'currentColor', strokeWidth = '0', strokeColor = 'cur
 };
 // https://github.com/SRAKIB17/ReactCustomIconsLibrary.git
 
-export default LinkAdd;
+export default LinkAddSVG;
 

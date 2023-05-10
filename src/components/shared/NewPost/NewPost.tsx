@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { useEffect, useRef } from 'react';
-import Youtube from '../../SVG/Youtube'
-import UploadFile from '../../SVG/UploadFile'
-import LinkAdd from '../../SVG/LinkAdd'
+import YoutubeSVG from '@/src/components/SVG/YoutubeSVG'
+import UploadFileSVG from '@/src/components/SVG/UploadFileSVG'
+import LinkAddSVG from '@/src/components/SVG/LinkAddSVG'
 
 const NewPost = () => {
     const newPostRef = useRef<HTMLDivElement | any>()
@@ -38,7 +38,6 @@ const NewPost = () => {
     }
     useEffect(() => {
 
-        // When the user clicks anywhere outside of the modal, close it
         // window.onclick = function (event) {
         //     if (event.target == modal) {
         //         modal.style.display = "none";
@@ -90,13 +89,13 @@ const NewPost = () => {
                         <div className='w-full text-right relative bottom-0 flex gap-4 p-2 flex-col md:flex-row md:items-center md:justify-between'>
                             <div className='flex gap-4'>
                                 <button className='p-2 hover:bg-gray-200 border rounded-full' data-title="Add link">
-                                    <LinkAdd />
+                                    <LinkAddSVG />
                                 </button>
                                 <button className='p-2 hover:bg-gray-200 border rounded-full' data-title="Upload file">
-                                    <UploadFile />
+                                    <UploadFileSVG />
                                 </button>
                                 <button className='p-2 hover:bg-gray-200 border rounded-full' data-title="Add youtube video">
-                                    <Youtube />
+                                    <YoutubeSVG />
                                 </button>
                             </div>
                             <div className='flex gap-2'>
