@@ -1,7 +1,7 @@
 import MessagesSVG from '@/src/components/SVG/MessagesSVG'
 import NotificationsSVG from '@/src/components/SVG/NotificationsSVG'
 import SettingsSVG from '@/src/components/SVG/SettingsSVG'
-import Loading from '@/src/components/loading/Loading'
+
 import NewPost from '@/src/components/shared/NewPost/NewPost'
 import UserNotFound from '@/src/components/shared/NotFound/UserNotFound'
 import { Metadata } from 'next'
