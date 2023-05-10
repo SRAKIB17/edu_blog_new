@@ -38,7 +38,7 @@ const menuBtn = [
 
 export default async function Profile(context: { params: { user_name: string } }) {
     const user_name = context.params
-    const check_user_name = decodeURIComponent(user_name?.user_name)?.[0] == '@'
+    const check_user_name = (user_name?.user_name)?.[0] == '~'
 
     return (
         <main className='px-3 flex flex-col gap-2 md:grid grid-cols-12 sm:gap-4 pt-10' >
@@ -55,7 +55,7 @@ export default async function Profile(context: { params: { user_name: string } }
                                         </div>
                                         <div className="user-name">
                                             {
-                                                decodeURIComponent(user_name?.user_name)
+                                                (user_name?.user_name)
                                             }
                                         </div>
                                     </div>
