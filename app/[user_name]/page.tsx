@@ -1,3 +1,6 @@
+import MessagesSVG from '@/src/components/Svg/MessagesSVG'
+import NotificationsSVG from '@/src/components/Svg/NotificationsSVG'
+import SettingsSVG from '@/src/components/Svg/SettingsSVG'
 import Loading from '@/src/components/loading/Loading'
 import NewPost from '@/src/components/shared/NewPost/NewPost'
 import UserNotFound from '@/src/components/shared/NotFound/UserNotFound'
@@ -36,28 +39,66 @@ const menuBtn = [
 
 export default async function Profile(context: { params: { user_name: string } }) {
     const user_name = context.params
-    const check_user_name = user_name?.user_name?.[0] == '~'
+    const check_user_name = decodeURIComponent(user_name?.user_name)?.[0] == '@'
 
     return (
-        <main className='px-3 flex flex-col gap-2 md:grid grid-cols-12 sm:gap-4' >
+        <main className='px-3 flex flex-col gap-2 md:grid grid-cols-12 sm:gap-4 pt-10' >
             {
                 check_user_name ?
                     <>
-                        <section className='col-start-1 lg:col-start-2 col-end-13 lg:col-end-12 pt-10 bg-[#C26401] ring-lime-50  rounded-lg h-[180px] lg:h-[240px] w-full '>
-
-                        </section>
-                        <section className='col-start-1 lg:col-start-2 col-end-5 bg-white border border-[#DADCE0] rounded-lg'>
-                            {
-                                menuBtn?.map((_m, index) => {
-                                    return (
-                                        <button key={index} className=" mt-2 border-0 w-full py-2 px-8  text-lg text-left cursor-progress" >
+                        <section className='col-start-1 lg:col-start-2 col-end-5 rounded-lg'>
+                            <div className="user-profile-area bg-white">
+                                <div className="side-wrapper">
+                                    <div className="user-profile">
+                                        <img src="https://assets.codepen.io/3364143/Screen+Shot+2020-08-01+at+12.24.16.png" alt="" className="user-photo" />
+                                        <div className=".user-full-name ">
+                                            Natalie Smith
+                                        </div>
+                                        <div className="user-name">
                                             {
-                                                _m?.html
+                                                decodeURIComponent(user_name?.user_name)
                                             }
-                                        </button>
-                                    )
-                                })
-                            }
+                                        </div>
+                                    </div>
+
+                                    <div className="user-notification">
+                                        <div className="notify ">
+                                            <button className='buttonSvg'>
+                                                <SettingsSVG />
+                                            </button>
+                                        </div>
+                                        <div className="notify ">
+                                            <button className='buttonSvg' data-alert='5'>
+                                                <MessagesSVG />
+                                            </button>
+                                        </div>
+                                        <div className="notify ">
+                                            <button className='buttonSvg' data-alert='5'>
+                                                <NotificationsSVG />
+                                            </button>
+                                        </div>
+                                    </div>
+                                    {/* 
+                                    <div className="progress-status">12/34</div>
+                                    <div className="progress">
+                                        <div className="progress-bar"></div>
+                                    </div> */}
+
+                                </div>
+
+                                <div className="side-wrapper">
+                                    <div className="font-medium">
+                                        Friends
+                                    </div>
+                                    <div className="flex justify-between pt-1">
+                                        <img src="https://images.unsplash.com/flagged/photo-1574282893982-ff1675ba4900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80" alt="" className="members-user" />
+                                        <img src="https://assets.codepen.io/3364143/Screen+Shot+2020-08-01+at+12.24.16.png" alt="" className="members-user" />
+                                        <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="" className="members-user" />
+                                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80" alt="" className="members-user" />
+                                        <img src="https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="" className="members-user" />
+                                    </div>
+                                </div>
+                            </div>
                         </section>
                         <section className='col-start-5 col-end-13 lg:col-end-12 '>
                             <NewPost />

@@ -7,8 +7,21 @@
   --background-body: #F5F5F5;
   --hover-div: #ECE6E1;
   --hover-link: #ED9243;
-  --primary-color: #5cb85c;
-  --primary-bg-foreground-color: white;
+
+  /* !New */
+  --body-bg-color: #e4e6f5;
+  --border-color: #e5e4e9;
+  --theme-bg-color: #fff;
+  --body-color: #1b1f31;
+  --main-color: #7a7e9d;
+  --main-light-color: #a1a4b9;
+  --title-color: #979dc3;
+  --body-font: "Jost", sans-serif;
+  --button-bg-color: #eaeefc;
+  --button-color: #4d76fd;
+  --unselected-checkbox: #f1f2f7;
+  --calendar-border-color: #cbcfe0;
+  --main-container-bg: #f0f0f7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,9 +44,24 @@ body {
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 2px 6px 2px rgba(60, 64, 67, .15);
 }
 
+
+.border-color {
+  border-color: var(--main-light-color)
+}
+
+.buttonSvg svg {
+  width: 36px;
+  padding: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: visible;
+  background-color: var(--button-bg-color);
+  color: var(--button-color);
+}
+
 .bg-primary {
-  background-color: var(--primary-color);
-  color: var(--primary-bg-foreground-color);
+  background-color: var(--button-color);
+  color: var(--button-bg-color);
 }
 
 .text-primary {
@@ -51,6 +79,8 @@ body {
   transform: scale(0.99);
 }
 
+/* ************************************************************************************************************************************************************************************** */
+/* ! Attribute */
 [data-title]:hover:after {
   opacity: 1;
   transition: all 0.1ms ease 0.1ms;
@@ -87,6 +117,74 @@ body {
   position: relative;
 }
 
+[data-alert]::before {
+  content: attr(data-alert);
+  font-size: 9px;
+  font-weight: 700;
+  position: absolute;
+  background-color: #ff537b;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  top: -3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
+  color: #fff;
+}
+
+[data-alert] {
+  position: relative;
+}
+
+/* ************************************************************************************************************************************************************************************** */
+/* ! checkbox  , radio, input */
+.checkbox-choice {
+  display: none;
+}
+
+.checkbox-choice+label:before {
+  content: "";
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--main-light-color);
+  margin-right: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='28' viewBox='0 0 24 24' fill='none' stroke='%23a1a4b9' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+
+.checkbox-choice:checked+label:before {
+  border-color: green;
+  background-color: var(--button-color);
+  border-color: var(--button-color);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='28' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 640px) {
+  .checkbox-choice+label:before {
+    width: 28px;
+    height: 28px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='18' height='26' viewBox='0 0 24 24' fill='none' stroke='%23a1a4b9' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
+  }
+
+  .checkbox-choice:checked+label:before {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='18' height='26' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
+  }
+}
+
+/* ******************** */
+* input:focus {
+  outline: 2px solid var(--button-color) !important;
+}
+
+/* ************************************************************************************************************************************************************************************** */
 /* FOR POST REACT */
 #reactCommentShareSection {
   transition: 2ms !important;

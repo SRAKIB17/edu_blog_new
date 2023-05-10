@@ -1,0 +1,66 @@
+img {
+    max-width: 100%;
+}
+
+.side-wrapper {
+    padding: 25px 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.user-profile-area {
+    width: 100%;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: auto;
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.user-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-full-name {
+    font-weight: 600;
+}
+
+.user-name,
+.msg-date {
+    color: var(--main-light-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.user-notification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+
+
+.members-user {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.notify {
+    position: relative;
+}
+
+.notify:not(:last-child) {
+    margin-right: 25px;
+}

@@ -1,0 +1,102 @@
+.search-bar {
+    height: 40px;
+    position: relative;
+}
+
+.search-bar input {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: var(--body-color);
+    padding: 0 35px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a1a4b9' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3e%3ccircle cx='11' cy='11' r='8'/%3e%3cpath d='M21 21l-4.35-4.35'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: 10px 50%;
+    font-family: var(--body-font);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.search-bar input::placeholder {
+    color: var(--main-light-color);
+}
+
+.msg {
+    padding: 30px;
+    background-color: var(--unselected-message);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.selected-bg {
+    background-color: var(--theme-bg-color);
+}
+
+.anim-y {
+    animation: slideUp .6s both;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(76px) scale(.92);
+        opacity: 0;
+    }
+}
+
+.message-seen-handle-checkbox {
+    display: none;
+}
+
+.message-seen-handle-checkbox+label:before {
+    content: "";
+    display: flex;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--main-light-color);
+    margin-right: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 24 24' fill='none' stroke='%23a1a4b9' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
+.message-seen-handle-checkbox:checked+label:before {
+    border-color: green;
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='10' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
+}
+
+.docs_message svg {
+    background-color: var(--button-bg-color);
+    color: var(--button-color);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.download-delete-docs {
+    position: relative;
+    display: none;
+}
+
+.docs_message:hover .download-delete-docs {
+    position: absolute;
+    right: 200px;
+    display: flex;
+}
+
+@media (max-width: 640px) {
+    .docs_message:hover .download-delete-docs {
+        position: absolute;
+        right: 20px;
+        display: flex;
+    }
+}

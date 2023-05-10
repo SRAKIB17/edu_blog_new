@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-
+import './messages.css'
 export async function generateMetadata({ params }: { params: { user_name: string } }): Promise<Metadata> {
   const check_user_name = decodeURIComponent(params?.user_name)?.[0] == '@'
 

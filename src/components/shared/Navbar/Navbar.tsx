@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import SideBarMenu from './SideBarMenu';
 import SideProfileMenu from './SideProfileMenu';
+import Loading from '../../loading/Loading';
 
 const Navbar = () => {
     useEffect(() => {
@@ -25,8 +26,8 @@ const Navbar = () => {
         sidebarMenuRef.current.style.left = '0px'
     }
     return (
-        <section className="w-full px-8 transition-colors sticky -top-0 border-b bg-white" id='header' style={{ zIndex: 100000 }}>
-            <div className="container flex items-center justify-between py-4 sm:py-5 mx-auto md:flex-row ">
+        <section className="w-full transition-colors sticky -top-0 border-b bg-white" id='header' style={{ zIndex: 100000 }}>
+            <div className="px-8  container flex items-center justify-between py-4 sm:py-5 mx-auto md:flex-row ">
                 <div className="relative flex items-center justify-between">
                     <button
                         className='px-1'
@@ -61,7 +62,7 @@ const Navbar = () => {
             </div>
             {/* <SideProfileMenu /> */}
             <SideBarMenu sidebarMenuRef={sidebarMenuRef} />
-
+            <Loading />
         </section>
 
     );
