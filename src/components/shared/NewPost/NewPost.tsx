@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { useEffect, useRef } from 'react';
-import YoutubeSVG from '@/src/components/SVG/YoutubeSVG'
-import UploadFileSVG from '@/src/components/SVG/UploadFileSVG'
-import LinkAddSVG from '@/src/components/SVG/LinkAddSVG'
+import YoutubeSVG from '@/src/components/SVG/YoutubeSVG.js'
+import UploadFileSVG from '@/src/components/SVG/UploadFileSVG.js'
+import LinkAddSVG from '@/src/components/SVG/LinkAddSVG.js'
 
 const NewPost = () => {
     const newPostRef = useRef<HTMLDivElement | any>()
