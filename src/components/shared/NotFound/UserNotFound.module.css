@@ -8,7 +8,6 @@
     font-size: 48px;
     display: inline-block;
     padding-right: 12px;
-    /* animation: type .5s alternate infinite; */
 }
 
 .error h2 {
@@ -30,14 +29,3 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-/* @keyframes type {
-    from {
-        box-shadow: inset -3px 0px 0px #888;
-    }
-
-    to {
-        box-shadow: inset -3px 0px 0px transparent;
-    }
-
-} */

@@ -18,7 +18,7 @@
   --title-color: #979dc3;
   --body-font: "Jost", sans-serif;
   --button-bg-color: #eaeefc;
-  --button-color: #4d76fd;
+  --primary-color: #4d76fd;
   --unselected-checkbox: #f1f2f7;
   --calendar-border-color: #cbcfe0;
   --main-container-bg: #f0f0f7;
@@ -56,12 +56,16 @@ body {
   border-radius: 50%;
   overflow: visible;
   background-color: var(--button-bg-color);
-  color: var(--button-color);
+  color: var(--primary-color);
 }
 
 .bg-primary {
-  background-color: var(--button-color);
+  background-color: var(--primary-color);
   color: var(--button-bg-color);
+}
+
+.border-primary {
+  border-color: var(--primary-color);
 }
 
 .text-primary {
@@ -162,8 +166,8 @@ body {
 
 .checkbox-choice:checked+label:before {
   border-color: green;
-  background-color: var(--button-color);
-  border-color: var(--button-color);
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='20' height='28' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
 }
 
@@ -181,7 +185,7 @@ body {
 
 /* ******************** */
 * input:focus {
-  outline: 2px solid var(--button-color) !important;
+  outline: 2px solid var(--primary-color) !important;
 }
 
 /* ************************************************************************************************************************************************************************************** */
@@ -194,4 +198,10 @@ body {
   #reactCommentShareSection {
     left: inherit !important;
   }
+}
+
+/* ****************** */
+canvas {
+  display: block;
+  margin-bottom: 0.5rem;
 }

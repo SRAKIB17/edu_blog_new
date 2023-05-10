@@ -6,6 +6,8 @@ import DocsSVG from '@/src/components/SVG/DocsSVG'
 import DeleteSVG from '@/src/components/SVG/DeleteSVG'
 import CloudDownloadSVG from '@/src/components/SVG/CloudDownloadSVG'
 import AttachmentSVG from '@/src/components/SVG/AttachmentSVG'
+import MiceVoiceSpeakerSVG from '@/src/components/SVG/MiceVoiceSpeakerSVG'
+import Loading from '@/src/components/loading/Loading'
 
 
 
@@ -87,9 +89,15 @@ export default async function Profile(context: { params: { user_name: string } }
                                             <span>
                                                 10 min ago
                                             </span>
-                                            <div className='pl-1'>
-                                                <input type="checkbox" name="msg" id="sfd" className="message-seen-handle-checkbox" checked disabled={true} />
-                                                <label htmlFor="sfd"></label>
+                                            <div className='pl-1 flex'>
+                                                <span>
+                                                    <input type="checkbox" name="msg" id="sfd" className="message-seen-handle-checkbox" disabled={true} />
+                                                    <label htmlFor="sfd"></label>
+                                                </span>
+                                                <span>
+                                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80"
+                                                        alt="" className="h-4 w-4 rounded-full border border-primary object-contain" />
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -116,13 +124,29 @@ export default async function Profile(context: { params: { user_name: string } }
                                     </div>
 
                                     <div className='pb-2'>
-                                        <div className="flex items-end">
+                                        <div className="flex items-end relative">
+                                            <div className='absolute bottom-10 z-20 bg-white w-full p-2'>
+                                                <svg fill="#000000" version="1.1" id="icon" xmlns="http://www.w3.org/2000/svg"
+                                                    width="30" height="30" viewBox="0 0 32 32">
+
+                                                    <rect width="32" height="32" fill="none" />
+                                                    <g>
+                                                        <circle cx="16" cy="16" r="4" className="recordingStartMessage" fill="red" />
+                                                        <path d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M16,22c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6 S19.3,22,16,22z" fill="#4d76fd" />
+                                                    </g>
+                                                </svg>
+
+                                            </div>
+
+                                            <button className='p-2 bg-gray-200 text-gray-500 hover:bg-gray-300' data-title='Tap to record'>
+                                                <MiceVoiceSpeakerSVG />
+                                            </button>
                                             <textarea
                                                 placeholder="Write something..."
-                                                className='h-10 bg-gray-200 p-1 resize-none outline-none focus:border-gray-400 w-full block'
+                                                className='h-10 bg-gray-200 p-1 py-2 resize-none outline-none focus:border-gray-400 w-full block'
                                             />
                                             <div className="flex items-center  ">
-                                                <button className='p-2 bg-gray-200 text-gray-500 hover:bg-gray-300'>
+                                                <button className='p-2 bg-gray-200 text-gray-500 hover:bg-gray-300' data-title='Attach file'>
                                                     <AttachmentSVG />
                                                 </button>
                                                 <button className='bg-primary p-2'>
