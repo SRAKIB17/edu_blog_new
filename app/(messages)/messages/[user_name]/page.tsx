@@ -16,10 +16,10 @@ export default async function Profile(context: { params: { user_name: string } }
             {
                 check_user_name ?
                     <>
-                        <section className='col-start-1 lg:col-start-2 col-end-5 bg-white h-full'>
+                        <section className='col-start-1 col-end-4 bg-white h-full'>
                             <MessagesUserList />
                         </section>
-                        <section className='col-start-5 col-end-13 lg:col-end-12 bg-white h-full '>
+                        <section className='col-start-4 col-end-13  bg-white h-full '>
                             <MessagesBody />
                         </section>
                     </>
