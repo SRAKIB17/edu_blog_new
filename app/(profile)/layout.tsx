@@ -2,7 +2,7 @@ import Footer from '@/src/components/shared/Footer'
 import '../globals.css'
 import '../user.css'
 // import './messages/[user_name]/global.css'
-import '../src/styles/modal.css'
+import '../../src/styles/modal.css'
 
 import Navbar from '@/src/components/shared/Navbar/Navbar'
 
