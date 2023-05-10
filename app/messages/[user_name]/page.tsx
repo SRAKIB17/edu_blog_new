@@ -95,29 +95,31 @@ export default async function Profile(context: { params: { user_name: string } }
                                     </div>
                                 </div>
 
-                                <div className='pl-12'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae sint odit, fugiat dolorum eligendi cum voluptate ut suscipit quaerat modi. Aperiam ratione natus iusto. Dolore dicta facilis quod voluptatem!
-                                    <div className='flex items-center gap-4 py-4 docs_message' >
-                                        <div className=" flex items-center gap-1">
-                                            <DocsSVG />
-                                            <div className="font-medium">Article.docx</div>
-                                        </div>
-                                        <div className='flex gap-2 download-delete-docs'>
-                                            <button className='buttonSvg'>
-                                                <DeleteSVG />
-                                            </button>
-                                            <button className='buttonSvg'>
-                                                <CloudDownloadSVG />
-                                            </button>
+                                <div>
+                                    <div className='pl-12'>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae sint odit, fugiat dolorum eligendi cum voluptate ut suscipit quaerat modi. Aperiam ratione natus iusto. Dolore dicta facilis quod voluptatem!
+                                        <div className='flex items-center gap-4 py-4 docs_message' >
+                                            <div className=" flex items-center gap-1">
+                                                <DocsSVG />
+                                                <div className="font-medium">Article.docx</div>
+                                            </div>
+                                            <div className='flex gap-2 download-delete-docs'>
+                                                <button className='buttonSvg'>
+                                                    <DeleteSVG />
+                                                </button>
+                                                <button className='buttonSvg'>
+                                                    <CloudDownloadSVG />
+                                                </button>
 
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div>
+                                    <div className='pb-2'>
                                         <div className="flex items-end">
                                             <textarea
                                                 placeholder="Write something..."
-                                                className='h-10 bg-gray-200 p-1 outline-none focus:border-gray-400 w-full block'
+                                                className='h-10 bg-gray-200 p-1 resize-none outline-none focus:border-gray-400 w-full block'
                                             />
                                             <div className="flex items-center  ">
                                                 <button className='p-2 bg-gray-200 text-gray-500 hover:bg-gray-300'>
