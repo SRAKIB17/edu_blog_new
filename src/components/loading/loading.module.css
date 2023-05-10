@@ -3,7 +3,7 @@
     height: 4px;
     /* width: 12rem; */
     /* background-color: rgb(169, 169, 169); */
-    background-color: rgb(232, 113, 10);
+    background-color: var(--button-color);
     border-radius: 4px;
     overflow: hidden;
 }
