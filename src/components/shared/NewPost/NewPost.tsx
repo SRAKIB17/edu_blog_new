@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import React, { useEffect, useRef } from 'react';
-import Youtube from '../../Svg/Youtube'
-import UploadFile from '../../Svg/UploadFile'
-import LinkAdd from '../../Svg/LinkAdd'
+import Youtube from '../../SVG/Youtube'
+import UploadFile from '../../SVG/UploadFile'
+import LinkAdd from '../../SVG/LinkAdd'
 
 const NewPost = () => {
     const newPostRef = useRef<HTMLDivElement | any>()
