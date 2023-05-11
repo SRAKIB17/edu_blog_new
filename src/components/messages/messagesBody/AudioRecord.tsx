@@ -17,7 +17,7 @@ export default function AudioRecord({ recordButtonHandleRef }: { recordButtonHan
             console.log('getUserMedia supported.');
 
             const constraints = { audio: true };
-            let chunks = [];
+            let chunks: any = [];
 
             let onSuccess = function (stream: any) {
                 const mediaRecorder = new MediaRecorder(stream);
@@ -44,21 +44,19 @@ export default function AudioRecord({ recordButtonHandleRef }: { recordButtonHan
                 }
 
                 mediaRecorder.onstop = function (e) {
-                    console.log(e)
-                    // audio.controls = true;
-                    // const blob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
-                    // chunks = [];
-                    // const audioURL = window.URL.createObjectURL(blob);
-                    // // audio.src = audioURL;
-                    // console.log("recorder stopped");
-                    // deleteButton.onclick = function (e) {
-                    //     e.target.closest(".clip").remove();
-                    // }
 
+                    // audio.controls = true;
+                    const blob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
+                    chunks = [];
+                    const audioURL = window.URL.createObjectURL(blob);
+                    const audio = document.createElement('audio')
+                    audio.src = audioURL;
+                    audio.setAttribute('controls', "true")
+                    document.getElementById('testMessages')?.appendChild(audio)
+                    console.log("recorder stopped");
                 }
 
                 mediaRecorder.ondataavailable = function (e) {
-                    console.log(e.data)
                     chunks.push(e.data);
                 }
             }
