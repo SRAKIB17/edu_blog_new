@@ -97,7 +97,7 @@ body {
   position: absolute;
   padding: 2px 4px !important;
   /* padding: 6px 6px 6px 8px !important; */
-  left: -20%;
+  left: 0%;
   bottom: calc(100% + 4px);
   color: white;
   /* color: #666; */

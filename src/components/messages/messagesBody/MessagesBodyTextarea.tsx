@@ -19,7 +19,7 @@ const MessagesBodyTextarea = () => {
                 {/* <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()"> */}
 
                 <button
-                    className=' p-4 sm:p-5  h-14 bg-gray-200 text-gray-500 hover:bg-gray-300' data-title='Tap to record'
+                    className=' p-4 sm:p-5  h-14 bg-gray-200 text-gray-500  hover:bg-gray-300' data-title='Tap to record'
                     ref={recordButtonHandleRef}
                 // onMouseDown={() => {
                 //     setStartRecord(true)

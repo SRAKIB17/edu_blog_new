@@ -131,7 +131,7 @@ export default function AudioRecord({ recordButtonHandleRef }: { recordButtonHan
 
     }, [])
     return (
-        <div className='absolute bottom-[44px] z-20 w-full h-0 overflow-hidden transition-[2ms] bg-primary px-2' ref={showRecordStatusRef}>
+        <div className='absolute bottom-[60px] z-20 w-full h-0 overflow-hidden transition-[2ms] bg-primary ' ref={showRecordStatusRef}>
             {/* <svg fill="#000000" version="1.1" id="icon" xmlns="http://www.w3.org/2000/svg"
                 width="30" height="30" viewBox="0 0 32 32">
 

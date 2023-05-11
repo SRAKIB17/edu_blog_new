@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
-import SideBarMenu from './SideBarMenu';
-import SideProfileMenu from './SideProfileMenu';
-import Loading from '../../loading/Loading';
-import MenuBarSVG from '../../SVG/MenuBarSVG';
+import Loading from '../loading/Loading';
+import MenuBarSVG from '../SVG/MenuBarSVG';
+import MessagesUserList from './messagesUserList/MessagesUserList';
+import SideProfileMenu from '../shared/Navbar/SideProfileMenu';
 
-const Navbar = () => {
+const NavbarMessages = () => {
     useEffect(() => {
 
         window.onscroll = function () { scrolling() };
@@ -22,16 +22,19 @@ const Navbar = () => {
         }
 
     }, [])
-    const sidebarMenuRef = useRef({ style: { left: '100px' } })
+    const sidebarMenuRef: any = useRef({ style: { left: '100px' } })
     const sideBarMenuShowHandle = () => {
         sidebarMenuRef.current.style.left = '0px'
+    }
+    const sideBarMenuCloseHandle = () => {
+        sidebarMenuRef.current.style.left = '-1000px'
     }
     return (
         <section className="w-full transition-colors sticky -top-0 border-b bg-white" id='header' style={{ zIndex: 100000 }}>
             <div className="px-8  container flex items-center justify-between py-4 sm:py-5 mx-auto md:flex-row ">
                 <div className="relative flex items-center justify-between">
                     <button
-                        className='px-1'
+                        className='px-1 block lg:hidden'
                         onClick={() => sideBarMenuShowHandle()}
                     >
                         <MenuBarSVG />
@@ -60,11 +63,22 @@ const Navbar = () => {
                 </div> */}
             </div>
             {/* <SideProfileMenu /> */}
-            <SideBarMenu sidebarMenuRef={sidebarMenuRef} />
+            <div className='box_shadow w-full max-w-[400px] h-full fixed bg-white -left-[1000px] top-0 transition-[2ms] border-r box_shadow z-10 block lg:hidden' ref={sidebarMenuRef}>
+                <div className=' absolute z-10 right-0'>
+                    <button
+                        onClick={() => sideBarMenuCloseHandle()}
+                        className='p-4 font-bold text-xl link '
+                    >
+                        X
+                    </button>
+                </div>
+                <MessagesUserList />
+            </div>
+            {/* <SideBarMenu sidebarMenuRef={sidebarMenuRef} /> */}
             <Loading />
         </section>
 
     );
 };
 
-export default Navbar;
+export default NavbarMessages;

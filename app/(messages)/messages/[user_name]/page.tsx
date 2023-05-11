@@ -4,6 +4,7 @@ import UserNotFound from '@/src/components/shared/NotFound/UserNotFound'
 
 import MessagesBody from '@/src/components/messages/messagesBody/MessagesBody'
 import MessagesUserList from '@/src/components/messages/messagesUserList/MessagesUserList'
+import NavbarMessages from '@/src/components/messages/NavbarMessages'
 
 
 
@@ -12,14 +13,14 @@ export default async function Profile(context: { params: { user_name: string } }
     const check_user_name = (user_name?.user_name)?.[0] == '~'
 
     return (
-        <main className='flex flex-col gap-2 md:grid grid-cols-12 sm:gap-4  h-full ' >
+        <main className='flex flex-col gap-2 lg:grid grid-cols-12  h-full ' >
             {
                 check_user_name ?
                     <>
-                        <section className='col-start-1 col-end-4 bg-white h-full'>
+                        <section className='col-start-1 col-end-5 xl:col-end-4 bg-white h-full hidden lg:block'>
                             <MessagesUserList />
                         </section>
-                        <section className='col-start-4 col-end-13  bg-white h-full '>
+                        <section className='col-start-5 xl:col-start-4 col-end-13 bg-white h-full '>
                             <MessagesBody />
                         </section>
                     </>

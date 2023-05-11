@@ -73,7 +73,7 @@
     display: flex;
     width: 14px;
     height: 14px;
-    border: 2px solid var(--main-light-color);
+    border: 1px solid var(--main-light-color);
     margin-right: 10px;
     border-radius: 50%;
     transition: 0.3s;

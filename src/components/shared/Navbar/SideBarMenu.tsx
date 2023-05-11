@@ -26,7 +26,7 @@ const SideBarMenu = ({ sidebarMenuRef }: { sidebarMenuRef: React.MutableRefObjec
         sidebarMenuRef.current.style.left = '-1000px'
     }
     return (
-        <div className='box_shadow w-full max-w-[304px] h-full fixed bg-white -left-[1000px] top-0 transition-[2ms] border-r box_shadow ' ref={sidebarMenuRef}>
+        <div className='box_shadow w-full max-w-[304px] h-full fixed bg-white -left-[1000px] top-0 transition-[2ms] border-r box_shadow z-10 ' ref={sidebarMenuRef}>
             <div className='w-full text-right'>
                 <button
                     onClick={() => sideBarMenuCloseHandle()}
