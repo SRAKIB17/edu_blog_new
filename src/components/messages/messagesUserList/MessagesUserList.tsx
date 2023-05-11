@@ -1,4 +1,5 @@
 import React from 'react';
+import SettingsSVG from '../../SVG/SettingsSVG';
 
 const MessagesUserList = () => {
     return (
@@ -10,11 +11,11 @@ const MessagesUserList = () => {
             </div>
 
             <div className='overflow-auto msg_body'>
-                <div className="msg selected-bg anim-y">
-                    <input type="checkbox" name="msg" id="message3" className="checkbox-choice" />
-                    <label htmlFor="message3"></label>
+                <div className='flex items-center justify-between w-full msg selected-bg anim-y'>
+                    <div className='flex items-center gap-1'>
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80"
+                            alt="" className="members-user " />
 
-                    <div className='flex items-center justify-between w-full'>
                         <div className="flex flex-col">
                             <button>
                                 <h2 className="user-full-name">
@@ -25,9 +26,11 @@ const MessagesUserList = () => {
                                 10 min ago
                             </span>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80"
-                            alt="" className="members-user " />
                     </div>
+
+                    <button className='buttonSvg'>
+                        <SettingsSVG />
+                    </button>
                 </div>
 
             </div>

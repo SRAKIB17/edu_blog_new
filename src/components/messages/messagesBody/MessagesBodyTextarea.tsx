@@ -42,7 +42,7 @@ const MessagesBodyTextarea = () => {
                         <AttachmentSVG size='18' />
                     </button>
                     <button className='bg-primary p-4 sm:p-5 h-14'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-send">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-send">
                             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
                     </button>
                 </div>

@@ -53,7 +53,7 @@ const MessagesBody = () => {
                                         </span>
                                         <span>
                                             <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80"
-                                                alt="" className="h-4 w-4 rounded-full border border-primary object-contain" />
+                                                alt="" className="h-4 w-4 rounded-full border border-primary object-cover" />
                                         </span>
                                     </div>
                                 </div>
