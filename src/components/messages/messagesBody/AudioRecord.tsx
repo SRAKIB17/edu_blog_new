@@ -1,16 +1,21 @@
 'use client'
+import {
+    useParams,
+    usePathname,
+    useRouter,
+    useSearchParams,
+    useSelectedLayoutSegment,
+    useServerInsertedHTML
+} from 'next/navigation'
 import { useEffect, useRef } from 'react'
-
 export default function AudioRecord({ recordButtonHandleRef }: { recordButtonHandleRef: any }) {
     const canvasRef = useRef<any>()
     const showRecordStatusRef = useRef<any>()
 
     useEffect(() => {
         const canvas: any = canvasRef.current
-
         let audioCtx: any;
         const canvasCtx = canvas.getContext("2d");
-
         //main block for doing the audio recording
 
         if (navigator.mediaDevices.getUserMedia) {
@@ -43,11 +48,25 @@ export default function AudioRecord({ recordButtonHandleRef }: { recordButtonHan
                     mediaRecorder.stop();
                 }
 
-                mediaRecorder.onstop = function (e) {
+                mediaRecorder.onstop = async function (e) {
 
                     // audio.controls = true;
                     const blob = new Blob(chunks, { 'type': 'audio/ogg; codecs=opus' });
+                    const formData = new FormData();
+                    formData.append("avatar", chunks[0]);
+
+                    // const x = await fetch('http://localhost:3000/api/~rakib/messages', {
+                    //     method: "POST",
+                    //     headers: {
+                    //         // "Content-Type": "application/json",
+                    //         'Content-Type': 'application/x-www-form-urlencoded',
+                    //     },
+                    //     body: formData,
+                    // })
+                    // console.log((await x.json()))
+
                     chunks = [];
+
                     const audioURL = window.URL.createObjectURL(blob);
                     const audio = document.createElement('audio')
                     audio.src = audioURL;

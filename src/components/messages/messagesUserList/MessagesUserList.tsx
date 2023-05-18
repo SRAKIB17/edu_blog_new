@@ -13,8 +13,7 @@ const MessagesUserList = () => {
             <div className='overflow-auto msg_body'>
                 <div className='flex items-center justify-between w-full msg selected-bg anim-y'>
                     <div className='flex items-center gap-1'>
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80"
-                            alt="" className="members-user " />
+                        <img src={`/api/~rakib/avatar`} alt="" className="members-user " />
 
                         <div className="flex flex-col">
                             <button>

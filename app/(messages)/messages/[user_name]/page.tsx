@@ -4,8 +4,8 @@ import UserNotFound from '@/src/components/shared/NotFound/UserNotFound'
 
 import MessagesBody from '@/src/components/messages/messagesBody/MessagesBody'
 import MessagesUserList from '@/src/components/messages/messagesUserList/MessagesUserList'
-import NavbarMessages from '@/src/components/messages/NavbarMessages'
 
+import { NextResponse, NextRequest } from 'next/server';
 
 
 export default async function Profile(context: { params: { user_name: string } }) {

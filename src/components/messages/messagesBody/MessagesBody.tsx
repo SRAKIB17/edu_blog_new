@@ -1,12 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import ClockSVG from '@/src/components/SVG/ClockSVG'
 import DocsSVG from '@/src/components/SVG/DocsSVG'
 import DeleteSVG from '@/src/components/SVG/DeleteSVG'
 import CloudDownloadSVG from '@/src/components/SVG/CloudDownloadSVG'
-import AttachmentSVG from '@/src/components/SVG/AttachmentSVG'
-import MiceVoiceSpeakerSVG from '@/src/components/SVG/MiceVoiceSpeakerSVG'
-import Loading from '@/src/components/loading/Loading'
-import AudioRecord from '@/src/components/messages/messagesBody/AudioRecord'
+
 import MessagesBodyTextarea from './MessagesBodyTextarea';
 import SettingsSVG from '../../SVG/SettingsSVG';
 
@@ -15,8 +13,9 @@ const MessagesBody = () => {
         <>
             <div className=' border-b border-color flex items-center justify-between sm:px-4'>
                 <div className='p-3 flex items-center gap-1'>
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80"
-                        alt="" className="members-user " />
+
+                    <img src={`/api/~rakib/avatar`} alt="" className="members-user " />
+
                     <h2 className="user-full-name">
                         Natalie Smith
                     </h2>
@@ -52,8 +51,7 @@ const MessagesBody = () => {
                                             <label htmlFor="sfd"></label>
                                         </span>
                                         <span>
-                                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80"
-                                                alt="" className="h-4 w-4 rounded-full border border-primary object-cover" />
+                                            <img src={`/api/~rakib/avatar`} alt="" className="h-4 w-4 rounded-full border border-primary object-cover" />
                                         </span>
                                     </div>
                                 </div>

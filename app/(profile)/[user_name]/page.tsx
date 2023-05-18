@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import MessagesSVG from '@/src/components/SVG/MessagesSVG'
 import NotificationsSVG from '@/src/components/SVG/NotificationsSVG'
 import SettingsSVG from '@/src/components/SVG/SettingsSVG'
@@ -49,7 +50,7 @@ export default async function Profile(context: { params: { user_name: string } }
                             <div className="user-profile-area bg-white">
                                 <div className="side-wrapper">
                                     <div className="user-profile">
-                                        <img src="https://assets.codepen.io/3364143/Screen+Shot+2020-08-01+at+12.24.16.png" alt="" className="user-photo" />
+                                        <img src={`/api/${user_name.user_name}/avatar`} alt={user_name?.user_name} className="user-photo" />
                                         <div className=".user-full-name ">
                                             Natalie Smith
                                         </div>
